@@ -1,7 +1,7 @@
 # Homeworks
 CSC 591-021 Group-8 Homework Repo
 
-![DOI](https://zenodo.org/badge/590194021.svg)](https://zenodo.org/badge/latestdoi/590194021)
+[![DOI](https://zenodo.org/badge/590194021.svg)](https://zenodo.org/badge/latestdoi/590194021)
 [![Collaborators](https://img.shields.io/badge/Collaborators-3-purple.svg?style=flat)](https://github.com/SN-18/ASE-group-8/graphs/contributors)
 [![Language](https://img.shields.io/badge/Language-Python-orange.svg?style=flat)](https://github.com/SN-18/ASE-group-8/search?l=python)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/SN-18/ASE-group-8/blob/main/LICENSE.md)
