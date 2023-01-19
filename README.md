@@ -17,6 +17,6 @@ Homework repository for **CSC 591 021 Group-8**<br/>
   2. cd into src folder of homework and run ```python main.py -g all```. Use ```--help``` option for a list of all options and change arguments likewise.
 
 # Team Members
- - Saurabh Nanda
- - Luke Jenquin
- - Ankur Banerji
+ - Saurabh Nanda (snanda2@ncsu.edu)
+ - Luke Jenquin  (lgjenqui@ncsu.edu)
+ - Ankur Banerji (abaner24@ncsu.edu)
