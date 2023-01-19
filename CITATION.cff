@@ -1,0 +1,24 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ASE_HW1
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Luke Jenquin
+    email: lukemj702@gmail.com
+  - given-names: Saurabh Nanda
+    email: saurabhnanda.official@gmail.com
+  - given-names: Ankur Banerji
+    email: ankurbanerji3@gmail.com
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.7549268
+repository-code: 'https://github.com/SN-18/ASE-group-8.git'
+abstract: >-
+  Here we are converting a Lua code into Python with
+  object-oriented principles.
+license: MIT
