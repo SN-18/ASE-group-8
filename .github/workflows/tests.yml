@@ -7,7 +7,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/setup-python@v4
       with:
-        python-version: '3.9.6'
+        python-version: '3.11.1'
     - name: test
       run: |
         cd src/HW1; python main.py -g all
