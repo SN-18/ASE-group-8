@@ -11,4 +11,7 @@ jobs:
     - name: test
       run: |
         cd src/HW1; python main.py -g all
+    - name: test
+      run: |
+        python src/HW2/main.py -g all -f etc/data/auto93.csv
     - run: echo "🍏 This job's status is ${{ job.status }}."
