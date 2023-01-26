@@ -16,7 +16,7 @@ Homework repository for **CSC 591 021 Group-3**<br/>
 # Steps to run
 - HW1:
   1. Install Python 3.10.6
-  2. cd into src folder of homework and run ```python main.py -g all```. Use ```--help``` option for a list of all options and change arguments likewise.
+  2. cd into src/HW1 folder of homework and run ```python main.py -g all```. Use ```--help``` option for a list of all options and change arguments likewise.
 - HW2:
   1. Install Python 3.10.6
   2. cd into src/HW2 folder of homework and run ```python main.py -g all```. Use ```--help``` option for a list of all options and change arguments likewise.
