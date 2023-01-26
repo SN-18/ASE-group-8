@@ -1,6 +1,5 @@
 import sys
 import math
-# import tables
 import data_loader
 
 from functions import *
@@ -9,11 +8,9 @@ from tests import *
 from tables import *
 from globals import the as the
 from globals import help as help
-# import symbols
 
 import re
 import os
-# seed=[0]*1
 
 
 
@@ -34,10 +31,6 @@ def driver(options, help, funs):
 
         print(help)
     else:
-        # print("I am printing funs\n")
-        # print(funs)
-        # print("I am now printing fun.items",funs.items())
-
         for what, fun in funs.items():
             if options['go'] == 'all' or what == options['go']:
 

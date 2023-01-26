@@ -13,7 +13,6 @@ from tables import *
 from data_loader import *
 from globals import the as the
 
-
 egs = {}
 
 
