@@ -7,7 +7,6 @@ from functions import *
 from settings import *
 from tests import *
 from tables import *
-from symbols import *
 from globals import the as the
 from globals import help as help
 # import symbols
