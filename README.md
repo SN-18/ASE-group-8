@@ -1,4 +1,3 @@
-  # Homeworks
 CSC 591-021 Group-8 Homework Repo
 
 [![DOI](https://zenodo.org/badge/590194021.svg)](https://zenodo.org/badge/latestdoi/590194021)
