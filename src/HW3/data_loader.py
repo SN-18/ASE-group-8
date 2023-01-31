@@ -54,6 +54,7 @@ class DATA:
         #for the function called fun
         def fun(x):
             self.add(x)
+            return 0, 0
 
 
         if type(src) is str:
@@ -80,9 +81,16 @@ class DATA:
             self.cols=COLS(t)
 
     def clone(self, init_para=0):
-        data=DATA(self.cols.names)
+        diction = {}
+        diction[0] = self.cols.names
+        data=DATA(diction)
         d={}
-        map_co(init_para or d,lambda x:data.add(x))
+
+        def fun(x):
+            data.add(x)
+            return 0, 0
+
+        map_co(init_para or d, fun)
         return data
 
     def stats(self,what, cols, nPlaces):
@@ -140,3 +148,14 @@ class DATA:
             else:
                 right[len(left) + 1] = tmp
         return left, right, A, B, mid, c
+
+    def cluster(i, rows={}, minx={}, cols={}, above={}):
+        rows = rows or i.rows
+        minx = minx or len(rows)**the['min']
+        cols = cols or i.cols.x
+        node = i.clone(rows)
+        if len(rows) > 2*minx:
+            left, right, node.A, node.B, node.mid = i.half(rows,cols,above)
+            node.left = i.cluster(left,  minx, cols, node.A)
+            node.right = i.cluster(right, minx, cols, node.B)
+        return node

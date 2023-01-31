@@ -66,7 +66,7 @@ if __name__ == '__main__':
     eg('sym', 'check syms', sym_test_3, help)
     eg('num', 'check nums', num_test_4, help)
     eg('data', 'read data csv', data_5, help)
-    # eg("clone", "duplicate structure", clone_6, help)
+    eg("clone", "duplicate structure", clone_6, help)
     eg("around", "sorting nearest neighbors", around_7, help)
     eg("half", "1-level bi-clustering", half_8, help)
     eg("cluster", "N-level bi-clustering", cluster_9, help)
