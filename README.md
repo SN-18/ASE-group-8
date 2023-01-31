@@ -10,7 +10,8 @@ CSC 591-021 Group-8 Homework Repo
 # About
 Homework repository for **CSC 591 021 Group-3**<br/>
 - HW1 - Conversion of <a href="https://github.com/timm/tested/blob/main/src/script.lua">script.lua</a> to Python, including the test cases. Automated workflows using GitHub Actions.
-- HW2 - Performing statistical operatons on data extracted from a csv file in addition to HW1. Conversion of <a href="https://github.com/timm/tested/blob/main/src/data.lua">data.lua</a> to Python, including the test cases.
+- HW2 - Performing statistical operations on data extracted from a csv file in addition to HW1. Conversion of <a href="https://github.com/timm/tested/blob/main/src/data.lua">data.lua</a> to Python, including the test cases.
+- HW3 - Performing statistical operations on data extracted from a csv file in addition to HW1 and HW2. Conversion of <a href="https://github.com/timm/tested/blob/main/src/cluster.lua">cluster.lua</a> to Python, including the test cases.
 
 # Steps to run
 - HW1:
