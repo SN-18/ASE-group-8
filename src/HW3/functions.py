@@ -1,5 +1,6 @@
 import re
 import math
+from functools import cmp_to_key
 seed = 937162211
 #miscelleneous functions
 def rand_intpy(lo, hi):
@@ -36,8 +37,8 @@ def kap_co(t, fun):
 
 
 def sort_co(t, fun):
-    dict(t.values().sort(key=fun))
-    return t
+    x = sorted(list(t.items()), key=cmp_to_key(fun))
+    return x
 
 
 def keys_co(t):
@@ -93,7 +94,7 @@ def show(node, what, cols, nPlaces, lvl):
         show(node.right, what, cols, nPlaces, lvl+1)
 
 def o(t, isKeys=False, fun=0):
-    if type(t) is not "table":
+    if type(t) != "table":
         return str(t)
     def func(k, v):
         if not v.find("^_"):

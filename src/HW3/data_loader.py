@@ -110,12 +110,14 @@ class DATA:
             col = localCols[k]
             n = n + 1
             d = d + col.dist(row1.cells[col.at], row2.cells[col.at])**the['p']
-        return (d/n)**(1/the['p']), n, d
+        return (d/n)**(1/the['p'])
 
     def around(i, row1, rows={}, cols={}):
         def func(row2):
             return row2, i.dist(row1, row2, cols)
+
         def lt(a, b):
-                return a['dist'] < b['dist']
+            return a[0] < b[0]
+
         return sort_co(map_co(rows or i.rows, func), lt)
 
