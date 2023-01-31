@@ -19,6 +19,10 @@ Homework repository for **CSC 591 021 Group-3**<br/>
 - HW2:
   1. Install Python 3.10.6
   2. cd into src/HW2 folder of homework and run ```python main.py -g all```. Use ```--help``` option for a list of all options and change arguments likewise.
+  
+- HW3:
+  1. Install Python 3.10.6
+  2. cd into src/HW3 folder of homework and run ```python main.py -g all -f ../../etc/data/auto93.csv```. Use ```--help``` option for a list of all options and change arguments likewise.
 
 # Team Members
  - Luke Jenquin (lgjenqui@ncsu.edu)
