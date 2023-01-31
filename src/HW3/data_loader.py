@@ -115,9 +115,28 @@ class DATA:
     def around(i, row1, rows={}, cols={}):
         def func(row2):
             return row2, i.dist(row1, row2, cols)
+        return sort_co(map_co(rows or i.rows, func), ltdist)
 
-        def lt(a, b):
-            return a[0] < b[0]
+    def half(i, rows={}, cols={}, above={}):
+        def project(row):
+            return {row:row, dist: cosine(dist(row, A), dist(row, B), c)}
 
-        return sort_co(map_co(rows or i.rows, func), lt)
+        def dist(row1, row2):
+            return i.dist(row1, row2, cols)
 
+        rows = rows or i.rows
+        some = many(rows, the['Sample'])
+        A = above or any_co(some)
+        B = i.around(A, some)[int(the['Far'] * len(i.around(A, some)))][1]
+        c = dist(A, B)
+        left, right = {}, {}
+        sortedx = sort_co(map_co(rows, project), ltdist)
+        i = 0
+        for _, tmp in sortedx:
+            i = i + 1
+            if i <= len(rows)//2:
+                left[len(left) + 1] = tmp
+                mid = tmp
+            else:
+                right[len(left) + 1] = tmp
+        return left, right, A, B, mid, c

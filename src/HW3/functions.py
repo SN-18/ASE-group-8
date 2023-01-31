@@ -1,3 +1,4 @@
+import random
 import re
 import math
 from functools import cmp_to_key
@@ -93,11 +94,34 @@ def show(node, what, cols, nPlaces, lvl):
         show(node.left, what, cols, nPlaces, lvl+1)
         show(node.right, what, cols, nPlaces, lvl+1)
 
+
 def o(t, isKeys=False, fun=0):
     if type(t) != "table":
         return str(t)
+
     def func(k, v):
         if not v.find("^_"):
             return ":%s %s".format(o(k), o(v))
     fun = func
     return "{" + concat(len(t)>0 and not isKeys and map_co(t, o) or sort_co(kap_co(t, fun)), " ") + "}"
+
+
+def many(t, n):
+    u = {}
+    for i in range(1,n):
+        u[1+len(u)]=any_co(t)
+    return u
+
+
+def cosine(a, b, c):
+    x1 = (a**2 + c**2 - b**2) / (2*c)
+    x2 = max(0, min(1, x1))
+    y = (a**2 - x2**2)**.5
+    return x2, y
+
+
+def ltdist(a, b):
+    return a[0] < b[0]
+
+def any_co(t):
+    return random.choice(list(t.items()))[1]
