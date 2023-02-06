@@ -12,7 +12,7 @@ Homework repository for **CSC 591 021 Group-3**<br/>
 - HW1 - Conversion of <a href="https://github.com/timm/tested/blob/main/src/script.lua">script.lua</a> to Python, including the test cases. Automated workflows using GitHub Actions.
 - HW2 - Performing statistical operations on data extracted from a csv file in addition to HW1. Conversion of <a href="https://github.com/timm/tested/blob/main/src/data.lua">data.lua</a> to Python, including the test cases.
 - HW3 - Performing statistical operations on data extracted from a csv file in addition to HW1 and HW2. Conversion of <a href="https://github.com/timm/tested/blob/main/src/cluster.lua">cluster.lua</a> to Python, including the test cases.
-- HW4 - Performing grid clustering from csv data named 'repgrid1.csv'. Conversion of <a href="https://github.com/timm/tested/blob/main/src/grid.lua">cluster.lua</a> to Python, including the test cases.
+- HW4 - Performing grid clustering from csv data named 'repgrid1.csv'. Conversion of <a href="https://github.com/timm/tested/blob/main/src/grid.lua">grid.lua</a> to Python, including the test cases.
 
 # Steps to run
 - HW1:
