@@ -17,4 +17,7 @@ jobs:
     - name: HW 3 Test
       run: |
         python src/HW3/main.py -g all -f etc/data/auto93.csv
+    - name: HW 4 Test
+      run: |
+        python src/HW4/main.py -g all -f etc/data/repgrid1.csv
     - run: echo "🍏 This job's status is ${{ job.status }}."
