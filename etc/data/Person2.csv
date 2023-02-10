@@ -1,0 +1,23 @@
+local _ = " "
+return {
+ domain="dissementian platforms",
+ cols={          {'Scify', 3, 2, 4, 5, 5, 3, 3, 4, 5, 3, 'Real Life'},
+               {'Serious', 1, 5, 1, 1, 5, 3, 2, 3, 1, 3, 'action'},
+             {'Emotional', 2, 2, 3, 5, 5, 3, 1, 3, 5, 1, 'Documentary'},
+             {'Romantic' , 3, 2, 5, 5, 5, 5, 1, 1, 5, 1, 'non romantic'},
+           {'Documentary', 3, 3, 4, 1, 1, 3, 5, 3, 1, 5, 'Reality shows'},
+                {'Tragic', 5, 5, 2, 2, 1, 3, 5, 3, 1, 5, 'Fantasy'},
+           {'Educational', 5, 5, 2, 1, 1, 4, 5, 4, 1, 5, 'Leisure'},
+           {'Predictable', 3, 1, 3, 1, 1, 1, 1, 5, 1, 2, 'Suspenseful'},
+          {'Binge Worthy', 2, 2, 4, 5, 5, 5, 3, 2, 2, 2, 'Non Binge Worthy'},
+                {'Famous', 1, 1, 4, 3, 3, 5, 2, 4, 2, 2, 'Obscure'}},
+rows={                      { _, _, _, _, _, _, _, _, _, 'Find Yourself'},
+                            { _, _, _, _, _, _, _, _, 'Our Planet'},
+                            { _, _, _, _, _, _, _, 'Outlanders'},
+                            { _, _, _, _, _, _, 'Love Island'},
+                            { _, _, _, _, _,  'Return to the space'},
+                            { _, _, _, _,  'Meltdown Three Mile Island'},
+                            { _, _, _,  'Challenger The final flight'},
+                            { _, _,  'The pursuit of happiness'},
+                            { _, 'Lord of the rings'},
+                            {'Forrest Gump'}} }

@@ -1,0 +1,173 @@
+{'dump': False, 'file': 'src/HW4/Person1.csv', 'go': 'all', 'help': False, 'p': 2, 'seed': 937162211}
+✅ pass: the
+✅ pass: sym
+✅ pass: num
+b4 {'a': 1, 'b': {'c': 2, 'd': [3]}} 
+after {'a': 1, 'b': {'c': 2, 'd': [10000]}}
+✅ pass: copy
+{'a': 'NUM', 'at': 0, 'count': 0, 'hi': 5.0, 'id': 4341056272, 'lo': 1.0, 'm2': 17.6, 'mu': 2.8, 'n': 10, 'txt': 'Num0', 'w': 1}
+{'a': 'NUM', 'at': 1, 'count': 0, 'hi': 5.0, 'id': 4341056320, 'lo': 1.0, 'm2': 23.6, 'mu': 2.8, 'n': 10, 'txt': 'Num1', 'w': 1}
+{'a': 'NUM', 'at': 2, 'count': 0, 'hi': 5.0, 'id': 4341056752, 'lo': 1.0, 'm2': 13.599999999999998, 'mu': 3.2, 'n': 10, 'txt': 'Num2', 'w': 1}
+{'a': 'NUM', 'at': 3, 'count': 0, 'hi': 5.0, 'id': 4341055936, 'lo': 1.0, 'm2': 32.900000000000006, 'mu': 2.9, 'n': 10, 'txt': 'Num3', 'w': 1}
+{'a': 'NUM', 'at': 4, 'count': 0, 'hi': 5.0, 'id': 4341056512, 'lo': 1.0, 'm2': 35.6, 'mu': 3.2000000000000006, 'n': 10, 'txt': 'Num4', 'w': 1}
+{'a': 'NUM', 'at': 5, 'count': 0, 'hi': 5.0, 'id': 4341056128, 'lo': 1.0, 'm2': 14.5, 'mu': 3.5, 'n': 10, 'txt': 'Num5', 'w': 1}
+{'a': 'NUM', 'at': 6, 'count': 0, 'hi': 5.0, 'id': 4341056032, 'lo': 1.0, 'm2': 25.600000000000005, 'mu': 2.8, 'n': 10, 'txt': 'Num6', 'w': 1}
+{'a': 'NUM', 'at': 7, 'count': 0, 'hi': 5.0, 'id': 4341071776, 'lo': 1.0, 'm2': 11.600000000000003, 'mu': 3.1999999999999997, 'n': 10, 'txt': 'Num7', 'w': 1}
+{'a': 'NUM', 'at': 8, 'count': 0, 'hi': 5.0, 'id': 4341055840, 'lo': 1.0, 'm2': 30.400000000000002, 'mu': 2.4000000000000004, 'n': 10, 'txt': 'Num8', 'w': 1}
+{'a': 'NUM', 'at': 9, 'count': 0, 'hi': 5.0, 'id': 4341055744, 'lo': 1.0, 'm2': 22.9, 'mu': 2.9, 'n': 10, 'txt': 'Num9', 'w': 1}
+{'a': 'SYM', 'at': 10, 'has': {}, 'id': 4341055648, 'mode': None, 'most': 0, 'n': 0, 'txt': 'thingsX'}
+{'a': 'ROW', 'cells': [3, 2, 4, 5, 5, 3, 3, 4, 5, 3, 'Scify:Real Life'], 'id': 4341055600, 't': [3, 2, 4, 5, 5, 3, 3, 4, 5, 3, 'Scify:Real Life']}
+{'a': 'ROW', 'cells': [1, 5, 1, 1, 5, 3, 2, 3, 1, 3, 'Serious:action'], 'id': 4341055696, 't': [1, 5, 1, 1, 5, 3, 2, 3, 1, 3, 'Serious:action']}
+{'a': 'ROW', 'cells': [2, 2, 3, 5, 5, 3, 1, 3, 5, 1, 'Emotional:Documentary'], 'id': 4341055984, 't': [2, 2, 3, 5, 5, 3, 1, 3, 5, 1, 'Emotional:Documentary']}
+{'a': 'ROW', 'cells': [3, 2, 5, 5, 5, 5, 1, 1, 5, 1, 'Romantic:non romantic'], 'id': 4341056848, 't': [3, 2, 5, 5, 5, 5, 1, 1, 5, 1, 'Romantic:non romantic']}
+{'a': 'ROW', 'cells': [3, 3, 4, 1, 1, 3, 5, 3, 1, 5, 'Documentary:Reality shows'], 'id': 4341056560, 't': [3, 3, 4, 1, 1, 3, 5, 3, 1, 5, 'Documentary:Reality shows']}
+{'a': 'ROW', 'cells': [5, 5, 2, 2, 1, 3, 5, 3, 1, 5, 'Tragic:Fantasy'], 'id': 4341056176, 't': [5, 5, 2, 2, 1, 3, 5, 3, 1, 5, 'Tragic:Fantasy']}
+{'a': 'ROW', 'cells': [5, 5, 2, 1, 1, 4, 5, 4, 1, 5, 'Educational:Leisure'], 'id': 4340907984, 't': [5, 5, 2, 1, 1, 4, 5, 4, 1, 5, 'Educational:Leisure']}
+{'a': 'ROW', 'cells': [3, 1, 3, 1, 1, 1, 1, 5, 1, 2, 'Predictable:Suspenseful'], 'id': 4340907888, 't': [3, 1, 3, 1, 1, 1, 1, 5, 1, 2, 'Predictable:Suspenseful']}
+{'a': 'ROW', 'cells': [2, 2, 4, 5, 5, 5, 3, 2, 2, 2, 'Binge Worthy:Non Binge Worthy'], 'id': 4340907792, 't': [2, 2, 4, 5, 5, 5, 3, 2, 2, 2, 'Binge Worthy:Non Binge Worthy']}
+{'a': 'ROW', 'cells': [1, 1, 4, 3, 3, 5, 2, 4, 2, 2, 'Famous:Obscure'], 'id': 4340907696, 't': [1, 1, 4, 3, 3, 5, 2, 4, 2, 2, 'Famous:Obscure']}
+✅ pass: repcols
+84
+|.. 75
+|.. |.. 29
+|.. |.. |.. Romantic:non romantic
+|.. |.. |.. Emotional:Documentary
+|.. |.. 60
+|.. |.. |.. Scify:Real Life
+|.. |.. |.. 60
+|.. |.. |.. |.. Documentary:Reality shows
+|.. |.. |.. |.. Serious:action
+|.. 68
+|.. |.. 68
+|.. |.. |.. Famous:Obscure
+|.. |.. |.. Binge Worthy:Non Binge Worthy
+|.. |.. 68
+|.. |.. |.. Educational:Leisure
+|.. |.. |.. 59
+|.. |.. |.. |.. Predictable:Suspenseful
+|.. |.. |.. |.. Tragic:Fantasy
+✅ pass: synonyms
+{'a': 'NUM', 'at': 0, 'count': 0, 'hi': 5.0, 'id': 4340184304, 'lo': 2.0, 'm2': 10.1, 'mu': 3.6999999999999997, 'n': 10, 'txt': 'Scify:Real Life', 'w': 1}
+{'a': 'NUM', 'at': 1, 'count': 0, 'hi': 5.0, 'id': 4338777200, 'lo': 1.0, 'm2': 22.5, 'mu': 2.5, 'n': 10, 'txt': 'Serious:action', 'w': 1}
+{'a': 'NUM', 'at': 2, 'count': 0, 'hi': 5.0, 'id': 4341056128, 'lo': 1.0, 'm2': 21.999999999999996, 'mu': 2.9999999999999996, 'n': 10, 'txt': 'Emotional:Documentary', 'w': 1}
+{'a': 'NUM', 'at': 3, 'count': 0, 'hi': 5.0, 'id': 4341055792, 'lo': 1.0, 'm2': 32.1, 'mu': 3.3, 'n': 10, 'txt': 'Romantic:non romantic', 'w': 1}
+{'a': 'NUM', 'at': 4, 'count': 0, 'hi': 5.0, 'id': 4341056800, 'lo': 1.0, 'm2': 20.9, 'mu': 2.9, 'n': 10, 'txt': 'Documentary:Reality shows', 'w': 1}
+{'a': 'NUM', 'at': 5, 'count': 0, 'hi': 5.0, 'id': 4341071776, 'lo': 1.0, 'm2': 25.6, 'mu': 3.2, 'n': 10, 'txt': 'Tragic:Fantasy', 'w': 1}
+{'a': 'NUM', 'at': 6, 'count': 0, 'hi': 5.0, 'id': 4341056608, 'lo': 1.0, 'm2': 30.100000000000005, 'mu': 3.3, 'n': 10, 'txt': 'Educational:Leisure', 'w': 1}
+{'a': 'NUM', 'at': 7, 'count': 0, 'hi': 5.0, 'id': 4341056704, 'lo': 1.0, 'm2': 16.900000000000002, 'mu': 1.9, 'n': 10, 'txt': 'Predictable:Suspenseful', 'w': 1}
+{'a': 'NUM', 'at': 8, 'count': 0, 'hi': 5.0, 'id': 4341056080, 'lo': 2.0, 'm2': 17.6, 'mu': 3.2, 'n': 10, 'txt': 'Binge Worthy:Non Binge Worthy', 'w': 1}
+{'a': 'NUM', 'at': 9, 'count': 0, 'hi': 5.0, 'id': 4341056368, 'lo': 1.0, 'm2': 16.1, 'mu': 2.6999999999999993, 'n': 10, 'txt': 'Famous:Obscure', 'w': 1}
+{'a': 'SYM', 'at': 10, 'has': {}, 'id': 4341055696, 'mode': None, 'most': 0, 'n': 0, 'txt': 'thingX'}
+{'a': 'ROW', 'cells': [3, 1, 2, 3, 3, 5, 5, 3, 2, 1, 'Forrest Gump'], 'id': 4341055984, 't': [3, 1, 2, 3, 3, 5, 5, 3, 2, 1, 'Forrest Gump']}
+{'a': 'ROW', 'cells': [2, 5, 2, 2, 3, 5, 5, 1, 2, 1, 'Lord of the rings'], 'id': 4340185024, 't': [2, 5, 2, 2, 3, 5, 5, 1, 2, 1, 'Lord of the rings']}
+{'a': 'ROW', 'cells': [4, 1, 3, 5, 4, 2, 2, 3, 4, 4, 'The pursuit of happiness'], 'id': 4341056848, 't': [4, 1, 3, 5, 4, 2, 2, 3, 4, 4, 'The pursuit of happiness']}
+{'a': 'ROW', 'cells': [5, 1, 5, 5, 1, 2, 1, 1, 5, 3, 'Challenger The final flight'], 'id': 4341055744, 't': [5, 1, 5, 5, 1, 2, 1, 1, 5, 3, 'Challenger The final flight']}
+{'a': 'ROW', 'cells': [5, 5, 5, 5, 1, 1, 1, 1, 5, 3, 'Meltdown Three Mile Island'], 'id': 4341056464, 't': [5, 5, 5, 5, 1, 1, 1, 1, 5, 3, 'Meltdown Three Mile Island']}
+{'a': 'ROW', 'cells': [3, 3, 3, 5, 3, 3, 4, 1, 5, 5, 'Return to the space'], 'id': 4341056656, 't': [3, 3, 3, 5, 3, 3, 4, 1, 5, 5, 'Return to the space']}
+{'a': 'ROW', 'cells': [3, 2, 1, 1, 5, 5, 5, 1, 3, 2, 'Love Island'], 'id': 4341071824, 't': [3, 2, 1, 1, 5, 5, 5, 1, 3, 2, 'Love Island']}
+{'a': 'ROW', 'cells': [4, 3, 3, 1, 3, 3, 4, 5, 2, 4, 'Outlanders'], 'id': 4341055936, 't': [4, 3, 3, 1, 3, 3, 4, 5, 2, 4, 'Outlanders']}
+{'a': 'ROW', 'cells': [5, 1, 5, 5, 1, 1, 1, 1, 2, 2, 'Our Planet'], 'id': 4341056320, 't': [5, 1, 5, 5, 1, 1, 1, 1, 2, 2, 'Our Planet']}
+{'a': 'ROW', 'cells': [3, 3, 1, 1, 5, 5, 5, 2, 2, 2, 'Find Yourself'], 'id': 4341055552, 't': [3, 3, 1, 1, 5, 5, 5, 2, 2, 2, 'Find Yourself']}
+✅ pass: reprows
+83
+|.. 78
+|.. |.. 33
+|.. |.. |.. Meltdown Three Mile Island
+|.. |.. |.. Challenger The final flight
+|.. |.. 51
+|.. |.. |.. The pursuit of happiness
+|.. |.. |.. 67
+|.. |.. |.. |.. Lord of the rings
+|.. |.. |.. |.. Forrest Gump
+|.. 76
+|.. |.. 76
+|.. |.. |.. Return to the space
+|.. |.. |.. Our Planet
+|.. |.. 76
+|.. |.. |.. Find Yourself
+|.. |.. |.. 42
+|.. |.. |.. |.. Outlanders
+|.. |.. |.. |.. Love Island
+✅ pass: prototypes
+
+A Forrest Gump
+B Lord of the rings
+C The pursuit of happiness
+D Challenger The final flight
+E Meltdown Three Mile Island
+F Return to the space
+G Love Island
+H Outlanders
+I Our Planet
+J Find Yourself
+
+                                       
+  G                               E    
+                                       
+                                       
+  J                                    
+                                       
+                                       
+    A B           F C       D          
+                                       
+✅ pass: position
+79
+|.. 79
+|.. |.. 38
+|.. |.. |.. Lord of the rings
+|.. |.. |.. Forrest Gump
+|.. |.. 38
+|.. |.. |.. The pursuit of happiness
+|.. |.. |.. 50
+|.. |.. |.. |.. Meltdown Three Mile Island
+|.. |.. |.. |.. Challenger The final flight
+|.. 80
+|.. |.. 80
+|.. |.. |.. Love Island
+|.. |.. |.. Find Yourself
+|.. |.. 76
+|.. |.. |.. Our Planet
+|.. |.. |.. 63
+|.. |.. |.. |.. Outlanders
+|.. |.. |.. |.. Return to the space
+79
+|.. 72
+|.. |.. 29
+|.. |.. |.. Emotional:Documentary
+|.. |.. |.. Romantic:non romantic
+|.. |.. 60
+|.. |.. |.. Scify:Real Life
+|.. |.. |.. 60
+|.. |.. |.. |.. Documentary:Reality shows
+|.. |.. |.. |.. Serious:action
+|.. 68
+|.. |.. 68
+|.. |.. |.. Famous:Obscure
+|.. |.. |.. Binge Worthy:Non Binge Worthy
+|.. |.. 68
+|.. |.. |.. Educational:Leisure
+|.. |.. |.. 59
+|.. |.. |.. |.. Predictable:Suspenseful
+|.. |.. |.. |.. Tragic:Fantasy
+
+A Forrest Gump
+B Lord of the rings
+C The pursuit of happiness
+D Challenger The final flight
+E Meltdown Three Mile Island
+F Return to the space
+G Love Island
+H Outlanders
+I Our Planet
+J Find Yourself
+
+                                       
+  B                             D      
+                                       
+                                       
+                                       
+                                       
+  J                                    
+      G A           F   C   I          
+                                       
+✅ pass: every
