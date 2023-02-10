@@ -1,0 +1,170 @@
+{'a': 'NUM', 'at': 0, 'count': 0, 'hi': 5.0, 'id': 2842512916192, 'lo': 1.0, 'm2': 24.399999999999995, 'mu': 2.5999999999999996, 'n': 10, 'txt': 'Num0', 'w': 1}
+{'a': 'NUM', 'at': 1, 'count': 0, 'hi': 5.0, 'id': 2842512916144, 'lo': 1.0, 'm2': 26.000000000000007, 'mu': 3.0, 'n': 10, 'txt': 'Num1', 'w': 1}
+{'a': 'NUM', 'at': 2, 'count': 0, 'hi': 5.0, 'id': 2842512916096, 'lo': 1.0, 'm2': 20.1, 'mu': 2.6999999999999997, 'n': 10, 'txt': 'Num2', 'w': 1}
+{'a': 'NUM', 'at': 3, 'count': 0, 'hi': 5.0, 'id': 2842512915904, 'lo': 1.0, 'm2': 30.400000000000006, 'mu': 3.4000000000000004, 'n': 10, 'txt': 'Num3', 'w': 1}
+{'a': 'NUM', 'at': 4, 'count': 0, 'hi': 5.0, 'id': 2842512916240, 'lo': 1.0, 'm2': 28.1, 'mu': 2.3000000000000003, 'n': 10, 'txt': 'Num4', 'w': 1}
+{'a': 'NUM', 'at': 5, 'count': 0, 'hi': 5.0, 'id': 2842513440832, 'lo': 1.0, 'm2': 22.1, 'mu': 2.3000000000000003, 'n': 10, 'txt': 'Num5', 'w': 1}
+{'a': 'NUM', 'at': 6, 'count': 0, 'hi': 5.0, 'id': 2842513440928, 'lo': 1.0, 'm2': 22.899999999999995, 'mu': 2.1000000000000005, 'n': 10, 'txt': 'Num6', 'w': 1}
+{'a': 'NUM', 'at': 7, 'count': 0, 'hi': 5.0, 'id': 2842513441024, 'lo': 1.0, 'm2': 32.9, 'mu': 2.9, 'n': 10, 'txt': 'Num7', 'w': 1}
+{'a': 'NUM', 'at': 8, 'count': 0, 'hi': 5.0, 'id': 2842513441120, 'lo': 1.0, 'm2': 31.999999999999993, 'mu': 2.9999999999999996, 'n': 10, 'txt': 'Num8', 'w': 1}
+{'a': 'NUM', 'at': 9, 'count': 0, 'hi': 5.0, 'id': 2842513441216, 'lo': 1.0, 'm2': 21.6, 'mu': 2.8, 'n': 10, 'txt': 'Num9', 'w': 1}
+{'a': 'SYM', 'at': 10, 'has': {}, 'id': 2842513441312, 'mode': None, 'most': 0, 'n': 0, 'txt': 'thingsX'}
+{'a': 'ROW', 'cells': [1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 'Fantasy:Romantic'], 'id': 2842513441360, 't': [1, 1, 1, 5, 1, 1, 1, 1, 5, 1, 'Fantasy:Romantic']}
+{'a': 'ROW', 'cells': [2, 1, 3, 1, 5, 1, 2, 1, 1, 1, 'Emotional:Documentary'], 'id': 2842512916000, 't': [2, 1, 3, 1, 5, 1, 2, 1, 1, 1, 'Emotional:Documentary']}
+{'a': 'ROW', 'cells': [3, 5, 1, 5, 1, 1, 1, 2, 5, 4, 'Documentaries:Fictional'], 'id': 2842512916384, 't': [3, 5, 1, 5, 1, 1, 1, 2, 5, 4, 'Documentaries:Fictional']}
+{'a': 'ROW', 'cells': [1, 4, 3, 3, 3, 2, 2, 5, 1, 3, 'Scientific:Societal'], 'id': 2842512916336, 't': [1, 4, 3, 3, 3, 2, 2, 5, 1, 3, 'Scientific:Societal']}
+{'a': 'ROW', 'cells': [1, 5, 2, 5, 1, 2, 2, 1, 5, 5, 'Educational:Leisure'], 'id': 2842513441264, 't': [1, 5, 2, 5, 1, 2, 2, 1, 5, 5, 'Educational:Leisure']}
+{'a': 'ROW', 'cells': [5, 1, 5, 1, 5, 5, 5, 5, 3, 3, 'Romantic:Non-Romantic'], 'id': 2842513441072, 't': [5, 1, 5, 1, 5, 5, 5, 5, 3, 3, 'Romantic:Non-Romantic']}
+{'a': 'ROW', 'cells': [4, 3, 3, 5, 4, 3, 1, 1, 1, 1, 'Award-Worthy:Non-Award-Worthy'], 'id': 2842513440880, 't': [4, 3, 3, 5, 4, 3, 1, 1, 1, 1, 'Award-Worthy:Non-Award-Worthy']}
+
+{'a': 'ROW', 'cells': [5, 3, 5, 5, 1, 2, 1, 5, 1, 2, 'Scify:Real-Life'], 'id': 2842513441552, 't': [5, 3, 5, 5, 1, 2, 1, 5, 1, 2, 'Scify:Real-Life']}
+{'a': 'ROW', 'cells': [1, 2, 1, 1, 1, 5, 5, 5, 5, 5, 'TV Series:Movies'], 'id': 2842513441648, 't': [1, 2, 1, 1, 1, 5, 5, 5, 5, 5, 'TV Series:Movies']}
+{'a': 'ROW', 'cells': [3, 5, 3, 3, 1, 1, 1, 3, 3, 3, 'Flight Drama:Fanatasy'], 'id': 2842513441744, 't': [3, 5, 3, 3, 1, 1, 1, 3, 3, 3, 'Flight Drama:Fanatasy']}
+✅ pass: repcols
+61
+|.. 61
+|.. |.. 61
+|.. |.. |.. Documentaries:Fictional
+|.. |.. |.. Fantasy:Romantic
+|.. |.. 61
+|.. |.. |.. Scientific:Societal
+|.. |.. |.. 54
+|.. |.. |.. |.. Educational:Leisure
+|.. |.. |.. |.. Emotional:Documentary
+|.. 71
+|.. |.. 71
+|.. |.. |.. Scify:Real-Life
+|.. |.. |.. Flight Drama:Fanatasy
+|.. |.. 71
+|.. |.. |.. Romantic:Non-Romantic
+|.. |.. |.. 66
+|.. |.. |.. |.. Award-Worthy:Non-Award-Worthy
+|.. |.. |.. |.. TV Series:Movies
+✅ pass: synonyms
+{'a': 'NUM', 'at': 0, 'count': 0, 'hi': 5.0, 'id': 2842512915952, 'lo': 1.0, 'm2': 25.600000000000005, 'mu': 1.8, 'n': 10, 'txt': 'Fantasy:Romantic', 'w': 1}
+{'a': 'NUM', 'at': 1, 'count': 0, 'hi': 5.0, 'id': 2842512916432, 'lo': 1.0, 'm2': 15.6, 'mu': 1.8, 'n': 10, 'txt': 'Emotional:Documentary', 'w': 1}
+{'a': 'NUM', 'at': 2, 'count': 0, 'hi': 5.0, 'id': 2842512916096, 'lo': 1.0, 'm2': 29.599999999999998, 'mu': 2.8, 'n': 10, 'txt': 'Documentaries:Fictional', 'w': 1}
+{'a': 'NUM', 'at': 3, 'count': 0, 'hi': 5.0, 'id': 2842512916048, 'lo': 1.0, 'm2': 14.1, 'mu': 2.6999999999999997, 'n': 10, 'txt': 'Scientific:Societal', 'w': 1}
+{'a': 'NUM', 'at': 4, 'count': 0, 'hi': 5.0, 'id': 2842512916144, 'lo': 1.0, 'm2': 30.9, 'mu': 2.9, 'n': 10, 'txt': 'Educational:Leisure', 'w': 1}
+{'a': 'NUM', 'at': 5, 'count': 0, 'hi': 5.0, 'id': 2842513441600, 'lo': 1.0, 'm2': 25.6, 'mu': 3.8, 'n': 10, 'txt': 'Romantic:Non-Romantic', 'w': -1}
+{'a': 'NUM', 'at': 6, 'count': 0, 'hi': 5.0, 'id': 2842513441360, 'lo': 1.0, 'm2': 20.4, 'mu': 2.6, 'n': 10, 'txt': 'Award-Worthy:Non-Award-Worthy', 'w': -1}
+{'a': 'NUM', 'at': 7, 'count': 0, 'hi': 5.0, 'id': 2842513456192, 'lo': 1.0, 'm2': 29.999999999999996, 'mu': 3.0, 'n': 10, 'txt': 'Scify:Real-Life', 'w': -1}
+{'a': 'NUM', 'at': 8, 'count': 0, 'hi': 5.0, 'id': 2842513456912, 'lo': 1.0, 'm2': 36.900000000000006, 'mu': 3.1, 'n': 10, 'txt': 'TV Series:Movies', 'w': 1}
+{'a': 'NUM', 'at': 9, 'count': 0, 'hi': 5.0, 'id': 2842513454464, 'lo': 1.0, 'm2': 14.399999999999999, 'mu': 2.5999999999999996, 'n': 10, 'txt': 'Flight Drama:Fanatasy', 'w': 1}
+
+{'a': 'SYM', 'at': 10, 'has': {}, 'id': 2842513456720, 'mode': None, 'most': 0, 'n': 0, 'txt': 'thingX'}
+{'a': 'ROW', 'cells': [1, 2, 3, 1, 1, 5, 4, 5, 1, 3, 'Find-Yourself'], 'id': 2842513440976, 't': [1, 2, 3, 1, 1, 5, 4, 5, 1, 3, 'Find-Yourself']}
+{'a': 'ROW', 'cells': [1, 1, 5, 4, 5, 1, 3, 3, 2, 5, 'Outlanders'], 'id': 2842512916384, 't': [1, 1, 5, 4, 5, 1, 3, 3, 2, 5, 'Outlanders']}
+{'a': 'ROW', 'cells': [1, 3, 1, 3, 2, 5, 3, 5, 1, 3, 'You-Vs-Wild'], 'id': 2842512916336, 't': [1, 3, 1, 3, 2, 5, 3, 5, 1, 3, 'You-Vs-Wild']}
+{'a': 'ROW', 'cells': [5, 1, 5, 3, 5, 1, 5, 5, 1, 3, 'Love-Island'], 'id': 2842512916288, 't': [5, 1, 5, 3, 5, 1, 5, 5, 1, 3, 'Love-Island']}
+{'a': 'ROW', 'cells': [1, 5, 1, 3, 1, 5, 4, 1, 1, 1, 'Return-To-Space'], 'id': 2842512915904, 't': [1, 5, 1, 3, 1, 5, 4, 1, 1, 1, 'Return-To-Space']}
+{'a': 'ROW', 'cells': [1, 1, 1, 2, 2, 5, 3, 2, 5, 1, 'Meltdown-Three-Mile-Island'], 'id': 2842512916240, 't': [1, 1, 1, 2, 2, 5, 3, 2, 5, 1, 'Meltdown-Three-Mile-Island']}
+{'a': 'ROW', 'cells': [1, 2, 1, 2, 2, 5, 1, 1, 5, 1, 'Challenger-The-Final-Flight'], 'id': 2842513456096, 't': [1, 2, 1, 2, 2, 5, 1, 1, 5, 1, 'Challenger-The-Final-Flight']}
+{'a': 'ROW', 'cells': [1, 1, 2, 5, 1, 5, 1, 5, 5, 3, 'The-Pursuit-Of-Happyness'], 'id': 2842513456528, 't': [1, 1, 2, 5, 1, 5, 1, 5, 5, 3, 'The-Pursuit-Of-Happyness']}
+{'a': 'ROW', 'cells': [5, 1, 5, 1, 5, 3, 1, 1, 5, 3, 'Lord-Of-The-Rings'], 'id': 2842513456816, 't': [5, 1, 5, 1, 5, 3, 1, 1, 5, 3, 'Lord-Of-The-Rings']}
+{'a': 'ROW', 'cells': [1, 1, 4, 3, 5, 3, 1, 2, 5, 3, 'Forrest-Gump'], 'id': 2842513457008, 't': [1, 1, 4, 3, 5, 3, 1, 2, 5, 3, 'Forrest-Gump']}
+✅ pass: reprows
+79
+|.. 79
+|.. |.. 40
+|.. |.. |.. Return-To-Space
+|.. |.. |.. You-Vs-Wild
+|.. |.. 60
+|.. |.. |.. Find-Yourself
+|.. |.. |.. 60
+|.. |.. |.. |.. Love-Island
+|.. |.. |.. |.. Outlanders
+|.. 69
+|.. |.. 59
+|.. |.. |.. Challenger-The-Final-Flight
+|.. |.. |.. Meltdown-Three-Mile-Island
+|.. |.. 69
+|.. |.. |.. Lord-Of-The-Rings
+|.. |.. |.. 69
+|.. |.. |.. |.. The-Pursuit-Of-Happyness
+|.. |.. |.. |.. Forrest-Gump
+✅ pass: prototypes
+
+A Find-Yourself
+B Outlanders
+C You-Vs-Wild
+D Love-Island
+E Return-To-Space
+F Meltdown-Three-Mile-Island
+G Challenger-The-Final-Flight
+H The-Pursuit-Of-Happyness
+I Lord-Of-The-Rings
+J Forrest-Gump
+
+
+  G                               D
+
+
+    F
+
+
+            J
+              C           B
+✅ pass: position
+74
+|.. 74
+|.. |.. 43
+|.. |.. |.. Outlanders
+|.. |.. |.. Love-Island
+|.. |.. 48
+|.. |.. |.. Find-Yourself
+|.. |.. |.. 48
+|.. |.. |.. |.. Return-To-Space
+|.. |.. |.. |.. You-Vs-Wild
+|.. 79
+|.. |.. 79
+|.. |.. |.. Forrest-Gump
+|.. |.. |.. Lord-Of-The-Rings
+|.. |.. 69
+|.. |.. |.. Meltdown-Three-Mile-Island
+|.. |.. |.. 45
+|.. |.. |.. |.. Challenger-The-Final-Flight
+|.. |.. |.. |.. The-Pursuit-Of-Happyness
+84
+|.. 71
+|.. |.. 24
+|.. |.. |.. Documentaries:Fictional
+|.. |.. |.. Educational:Leisure
+|.. |.. 58
+|.. |.. |.. Fantasy:Romantic
+|.. |.. |.. 61
+|.. |.. |.. |.. Emotional:Documentary
+|.. |.. |.. |.. Scientific:Societal
+|.. 71
+|.. |.. 71
+|.. |.. |.. Award-Worthy:Non-Award-Worthy
+|.. |.. |.. Flight Drama:Fanatasy
+|.. |.. 71
+|.. |.. |.. Romantic:Non-Romantic
+|.. |.. |.. 64
+|.. |.. |.. |.. Scify:Real-Life
+|.. |.. |.. |.. TV Series:Movies
+
+A Find-Yourself
+B Outlanders
+C You-Vs-Wild
+D Love-Island
+E Return-To-Space
+F Meltdown-Three-Mile-Island
+G Challenger-The-Final-Flight
+H The-Pursuit-Of-Happyness
+I Lord-Of-The-Rings
+J Forrest-Gump
+
+
+  B                           E
+
+
+
+
+
+                    C
+        J         A
+    D                 F G
+
+✅ pass: every
