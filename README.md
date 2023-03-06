@@ -14,6 +14,7 @@ Homework repository for **CSC 591 021 Group-3**<br/>
 - HW3 - Performing statistical operations on data extracted from a csv file in addition to HW1 and HW2. Conversion of <a href="https://github.com/timm/tested/blob/main/src/cluster.lua">cluster.lua</a> to Python, including the test cases.
 - HW4 - Performing grid clustering from csv data named 'repgrid1.csv'. Conversion of <a href="https://github.com/timm/tested/blob/main/src/grid.lua">grid.lua</a> to Python, including the test cases.
 - HW5 - Performing Discretization of the data and merging the bins. Conversion of <a href="https://github.com/timm/tested/blob/main/src/bins.lua">bins.lua</a> to Python, including the test cases.
+- HW6 - Conversion of <a href="https://github.com/timm/tested/blob/main/src/xpln.lua">xpln.lua</a> to Python, including the test cases.
 
 # Steps to run
 - HW1:
@@ -32,6 +33,9 @@ Homework repository for **CSC 591 021 Group-3**<br/>
 
 - HW5:
   1. cd into src/HW5 folder of homework and run ```python main.py -g all -f ../../etc/data/auto93.csv```, Use ```--help``` option for a list of all options and change arguments likewise.
+
+- HW6:
+  1. cd into src/HW6 folder of homework and run ```python main.py -g all -f ../../etc/data/auto93.csv```, Use ```--help``` option for a list of all options and change arguments likewise.
 
 # Team Members
  - Luke Jenquin (lgjenqui@ncsu.edu)
