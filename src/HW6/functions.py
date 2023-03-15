@@ -84,7 +84,9 @@ def kap_co(t, fun):
 
 def sort_co(t, fun):
     # dict(sorted(t.items(), key=lambda a, b: a['dist'] < b['dist']))
-    return dict(sorted(t.items(), key=lambda x: x[1][fun]))
+    # print("debugging sort_co, this is fun:",fun)
+    key=lambda x: x[1][fun]
+    return dict(sorted(t.items()))
 
 
 def keys_co(t):
@@ -280,19 +282,32 @@ def RANGE(at, txt, lo, hi=None):
 def RULE(ranges, maxSize):
     t = {}
     for _,range in ranges.items():
-        if not range.txt in t:
-            t[range.txt] = {}
-        d = {'lo': range.lo, 'hi': range.hi, 'at': range.at}
-        t[range.txt] = d
+        # print("this is the function RULE, and this is range dict:",range)
+
+        range_var=range['txt'] if 'txt' in range else 0
+
+        # 'txt' not in
+
+        if range_var not in t:
+            t[range_var] = {}
+
+        lo_val=range['lo'] if 'lo' in range else 0
+        hi_val=range['hi'] if 'hi' in range else 0
+        at_val=range['at'] if 'at' in range else 0
+
+        d = {'lo': lo_val, 'hi': hi_val, 'at': at_val}
+        t[range_var] = d
     return prune(t, maxSize)
 
 def prune(rule, maxSize):
     n = 0
     for txt, ranges in rule.items():
         n = n + 1
-        if len(ranges) == maxSize[txt]:
-            n = n + 1
-            rule[txt] = None
+        if 'txt' in maxSize:
+            if len(ranges) == maxSize['txt']:
+                n = n + 1
+                rule[txt] = None
+
     if n > 0:
         return rule
 
@@ -536,16 +551,24 @@ def value(has, nB=None, nR=None, sGoal=None):
 
 def firstN(sortedRanges, scoreFun):
     def fun(r):
-        print(r.range.txt, r.range.lo, r.range.hi, round_n(r.val), r.range.y.has)
+        # print("r is:",r)
+        print(r["range"]["txt"], r["range"]["lo"], r["range"]["hi"], round_n(r["val"]), r["range"]["y"].has)
     print("")
+    # print("sortedRanges before map_co is:",sortedRanges)
     map_co(sortedRanges, fun)
-    first = sortedRanges[0].val
+    # print("sortedRanges is",sortedRanges)
+    first = sortedRanges[0]["val"]
     def useful(range):
-        if range.val > 0.5 and range.val > first/10:
+        if range["val"] > 0.5 and range["val"] > first/10:
             return range
     sortedRanges = map_co(sortedRanges, useful)
     most, out = -1, None
     for n in range(0, len(sortedRanges)):
+        # print("I'm inside the for loop, testing")
+        score_fun_variable=scoreFun(map_co(slice(sortedRanges, 0, n), on('range')))
+        # print("this is debugging scoreFun,scoreFun is:",score_fun_variable)
+        if score_fun_variable is None:
+            continue
         tmp, rule = scoreFun(map_co(slice(sortedRanges, 0, n), on('range')))
         if tmp and tmp > most:
             out, most = rule, tmp
@@ -557,13 +580,18 @@ def showRule(rule):
     def merges(attr, ranges):
         return map_co(merge(sort_co(ranges, "lo")), pretty), attr
     def merge(t0):
-        t, j, left, right = {}, 0
+        t, j, left, right = {}, 0, 0 , 0
+        empty_dict=dict()
         while j < len(t0) - 1:
-            left, right = t0[j], t0[j+1]
-            if right and left.hi == right.lo:
-                left.hi = right.hi
+
+            left= t0[j] if j in t0 else empty_dict
+            right=t0[j+1] if (j+1) in t0 else empty_dict
+
+
+            if right and left["hi"] == right["lo"]:
+                left["hi"] = right["hi"]
                 j = j + 1
-            t[len(t)] = {'lo': left.lo, 'hi': left.hi}
+            t[len(t)] = {'lo': left['lo'] if 'lo' in left else 0, 'hi': left['hi'] if 'hi' in left else 0}
             j = j + 1
         if len(t0) == len(t):
             return t
@@ -573,27 +601,75 @@ def showRule(rule):
 
 def selects(rule, rows):
     def disjunction(ranges, row):
-        for _, range in ranges.items():
-            lo, hi, at = range.lo, range.hi, range.at
-            x = row[at]
-            if x == "?":
-                return True
-            if lo==hi and lo==x:
-                return True
-            if lo <= x and x < hi:
-                return True
+        empty_dict=dict()
+        # print(ranges.items())
+        for _, range_stat in ranges.items():
+            current_range=range_stat
+            # print("current range is:",current_range)
+            # print("type of range_stat is:",type(range_stat))
+            # print("this is range_stat, should not be an int, I suppose:", range_stat)
+            # print("this is ranges.items()",ranges.items())
+
+            if range_stat==0:
+                lo=hi=at=0
+            else:
+                lo= range_stat["lo"] if 'lo' in range_stat else empty_dict
+                hi= range_stat["hi"] if 'hi' in range_stat else empty_dict
+                at= range_stat["at"] if 'lo' in range_stat else empty_dict
+
+
+            # print("row is:",row)
+            # print("type of row is:",type(row))
+
+            try:
+                if row['at'] == '?':
+                    x = True
+
+                if 'at' in row:
+                    print("row['at'] is:",row['at'])
+
+                x = row['at'] if 'at' in row else empty_dict
+
+                if x == "?":
+                    return True
+
+                if lo == hi and lo == x:
+                    return True
+
+                if lo <= x and x < hi:
+                    return True
+
+            except:
+                continue
+
+
+
+
+
+            # else:
+            #     if 'at' in row:
+            #         print("row['at'] is:",row['at'])
+
+
+
+
         return False
+
     def conjunction(row):
         for _,ranges in rule.items():
             if not disjunction(ranges, row):
                 return False
         return True
+
     def fun(r):
         if conjunction(r):
-            return r
+            return map_co(rows, r)
     return map_co(rows, fun)
 
 def on(x):
+
     def fun(t):
-        return t[x]
+        # print("t is:",t)
+        empty_dict=dict()
+        return t[x] if t else empty_dict
     return fun
