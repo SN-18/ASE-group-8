@@ -37,9 +37,22 @@ def csv(sFilename,fun):
 #Data Class
 class DATA:
     index=0
-    def __init__(self,src):
+    def __init__(self,src,rows={}):
+
+        # self.rows=rows
+        # print("this is type of rows",self.rows)
         self.rows=dict()
         self.cols=None
+
+        # print("type of rows is:",type(self.rows))
+        # print("type of cols is:",type(self.cols))
+
+
+        # hashable_rows_dataset=frozenset(self.rows)
+        # self.data={hashable_rows_dataset,self.cols}
+
+        # self.data={self.rows,self.cols}
+
         def fun(x):
             self.add(x)
         if type(src) is str:
@@ -154,7 +167,9 @@ class DATA:
         def dist(row1, row2):
             return self.dist(row1, row2, cols)
         def cos(a, b, c):
-            return (a**2 + c**2 - b**2) / (2*c)
+            c_z_handle=c if c!=0 else 1
+            ret_expr=(a**2+c**2-b**2)/(2*c_z_handle)
+            return ret_expr
 
         rows = rows or self.rows
 
@@ -250,18 +265,40 @@ class DATA:
         def score(ranges):
             rule = RULE(ranges, maxSizes)
             if rule:
+                # print("this is a rule")
                 print(showRule(rule))
+
                 bestr = selects(rule, best.rows)
                 restr = selects(rule, rest.rows)
+
                 if len(bestr) + len(restr) > 0:
                     return v({'best': len(bestr), 'rest': len(restr)}), rule
         tmp, maxSizes = {}, {}
-        for _, ranges in bins(self.cols.x, {'best': best.rows, 'rest': rest.rows}).items():
+
+        # print("this is cols.x dictionary",self.cols.x)
+        # print("this is the iterable term", bins(self.cols.x, {'best': best.rows, 'rest': rest.rows}).items())
+        iterable=bins(self.cols.x, {'best': best.rows, 'rest': rest.rows}).items()
+
+        for _, ranges in iterable:
             # print("printing ranges in DATA xpln",ranges)
-            maxSizes[ranges[1].txt] = len(ranges)
-            print("")
-            for _, range in ranges.items():
-                print(range.txt, range.lo, range.hi)
-                tmp[len(tmp)] = {'range': range, 'max': len(ranges), 'val': v(range.y.has)}
+            # print("this is ranges dictionary",ranges)
+
+
+
+            if ranges:
+                # print("this is ranges[1]", ranges[1])
+                # print("I'm inside of try, as I should be, as ranges is not empty")
+                # print("ranges.items() is:", ranges.items())
+                maxSizes[ranges[1]["txt"]] = len(ranges)
+
+                print("\n")
+
+                for _, range in ranges.items():
+                    # print("Debugging: This range should not be empty",range)
+                    print(range["txt"], range["lo"], range["hi"])
+                    tmp[len(tmp)] = {'range': range, 'max': len(ranges), 'val': v(range["y"].has)}
+            else:
+                continue
+        # print("this is debugging, value of tmp var is:",tmp)
         rule, most = firstN(sort_co(tmp, 'val'), score)
         return rule, most
