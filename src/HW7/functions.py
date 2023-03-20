@@ -454,29 +454,6 @@ def bins(cols, rowss):
 
     return out
 
-# def bins(cols, rowss):
-#     def fun(x):
-#         return x
-#     def with1Col(col):
-#         n, ranges = withAllRows(col)
-#         ranges = sort_co(map_co(ranges, fun),'lo')
-#         if isinstance(col, SYM):
-#             return ranges
-#         else:
-#             return merges(ranges, n/the['bins'], the['d']*col.div())
-#     def withAllRows(col):
-#         def xy(x, y):
-#             if x != "?":
-#                 k = int(bin(col, x))
-#                 if not k in ranges:
-#                     ranges[k] = RANGE(col.at, col.txt, x)
-#                 extend(ranges[k], x, y)
-#         n, ranges = 0, {}
-#         for y, rows in rowss.items():
-#             for _, row in rows.items():
-#                 xy(row.cells[col.at], y)
-#         return n, ranges
-#     return map_co(cols, with1Col)
 
 def cliffsDelta(ns1,ns2):
     if len(ns1)>256:
@@ -642,17 +619,6 @@ def selects(rule, rows):
             except:
                 continue
 
-
-
-
-
-            # else:
-            #     if 'at' in row:
-            #         print("row['at'] is:",row['at'])
-
-
-
-
         return False
 
     def conjunction(row):
@@ -692,6 +658,9 @@ def mid():
 def RX():
     pass
 def samples():
+    pass
+
+def delta():
     pass
 
 
