@@ -92,7 +92,7 @@ def around_test_9():
 
 def half_test_10():
     data = DATA(the['file'])
-    left, right, A, B, c, _ = data.half()
+    left, right, A, B, c = data.half()
     print(len(left),len(right))
     l, r = data.clone(left), data.clone(right)
     print("l",l.stats('mid', l.cols.y, 2))
@@ -225,7 +225,7 @@ def tree_test_25():
 
 def sway_test_26():
     data = DATA(the['file'])
-    best, rest, _ = data.sway()
+    best, rest = data.sway()
     print("\nall ",data.stats('mid',data.cols.y, 2))
     print("    ",data.stats('div',data.cols.y, 2))
     print("\nbest ",best.stats('mid',best.cols.y, 2))
@@ -237,7 +237,7 @@ def sway_test_26():
 
 def bins_test_27():
     data = DATA(the['file'])
-    best, rest, _ = data.sway()
+    best, rest = data.sway()
     data.sway()
     temp = {'best': len(best.rows), 'rest': len(rest.rows)}
     print("all","","","",temp)
@@ -249,16 +249,3 @@ def bins_test_27():
                 print("")
             globals.b4[len(globals.b4)] = range['txt']
             print(range['txt'],range['lo'],range['hi'],round_n(value(range['y'].has, len(best.rows), len(rest.rows), 'best')), range['y'].has)
-
-def xpln_test_28():
-    data = DATA(the['file'])
-    best, rest, evals = data.sway()
-    rule, most = data.xpln(best, rest)
-    print("\n-----------\n explain =",showRule(rule))
-    data1 = DATA(data, selects(rule, data.rows))
-    print("all\t\t\t",data.stats('mid', data.cols.y, 2),data.stats('div', data.cols.y, 2))
-    print("sway with ",evals," evals",best.stats('mid', best.cols.y, 2), best.stats('div', best.cols.y, 2))
-    print("sway with ",evals," evals",data1.stats('mid', data1.cols.y, 2), data1.stats('div', data1.cols.y, 2))
-    top, _ = data.betters(len(best.rows))
-    top = DATA(data, top)
-    print("sort with ",len(data.rows)," evals",top.stats('mid',top.cols.y,2),top.stats('div',top.cols.y,2))

@@ -6,7 +6,6 @@ USAGE:   script.lua  [OPTIONS] [-g ACTION]
 OPTIONS:
   -b  --bins   initial number of bins      = 16
   -c  --cliffs cliff's delta threshold     = 0.147
-  -d  --d      different is over sd*d      = 0.35
   -f  --file   name of file                = ./auto93.csv
   -F  --Far    distance on distant         = 0.95
   -g  --go     start-up action             = data

@@ -36,7 +36,7 @@ class OBJ():
         return t[max(1,min(len(t),p))]
 
     def div(self,col,e):
-        if isinstance(col, SYM):
+        if col.isSym:
             e=0
             if isinstance(col,SYM):
                 for _,n in col.has.items():
@@ -46,13 +46,13 @@ class OBJ():
                 return (self.per(self.has(col)),0.9)- self.per(self.has(col),0.1)/2.58
 
     def has(self,col):
-        if not isinstance(col, SYM) and not col.ok:
+        if not col.isSym and not col.ok:
             functions.sort_co(col.has)
         col.ok=True
         return col.has
 
     def mid(self,col):
-        if isinstance(col, SYM):
+        if col.isSym:
             return col.mode
         
         else:

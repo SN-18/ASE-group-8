@@ -80,7 +80,6 @@ if __name__ == '__main__':
     eg('tree', 'make and show tree of clusters', tree_test_25, help)
     eg('sway', 'optimizing', sway_test_26, help)
     eg('bins', 'find deltas between best and rest', bins_test_27, help)
-    eg('xpln', 'explore explanation sets', xpln_test_28, help)
 
 
 

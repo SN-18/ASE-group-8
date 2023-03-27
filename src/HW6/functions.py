@@ -84,9 +84,7 @@ def kap_co(t, fun):
 
 def sort_co(t, fun):
     # dict(sorted(t.items(), key=lambda a, b: a['dist'] < b['dist']))
-    # print("debugging sort_co, this is fun:",fun)
-    key=lambda x: x[1][fun]
-    return dict(sorted(t.items()))
+    return dict(sorted(t.items(), key=lambda x: x[1][fun]))
 
 
 def keys_co(t):
@@ -279,38 +277,6 @@ def RANGE(at, txt, lo, hi=None):
     d = {'at': at, 'txt': txt, 'lo': lo, 'hi': lo or hi or lo, 'y': SYM(-1, "")}
     return d
 
-def RULE(ranges, maxSize):
-    t = {}
-    for _,range in ranges.items():
-        # print("this is the function RULE, and this is range dict:",range)
-
-        range_var=range['txt'] if 'txt' in range else 0
-
-        # 'txt' not in
-
-        if range_var not in t:
-            t[range_var] = {}
-
-        lo_val=range['lo'] if 'lo' in range else 0
-        hi_val=range['hi'] if 'hi' in range else 0
-        at_val=range['at'] if 'at' in range else 0
-
-        d = {'lo': lo_val, 'hi': hi_val, 'at': at_val}
-        t[range_var] = d
-    return prune(t, maxSize)
-
-def prune(rule, maxSize):
-    n = 0
-    for txt, ranges in rule.items():
-        n = n + 1
-        if 'txt' in maxSize:
-            if len(ranges) == maxSize['txt']:
-                n = n + 1
-                rule[txt] = None
-
-    if n > 0:
-        return rule
-
 def extend(range, n, s):
     range['lo'] = min(n, range['lo'])
     range['hi'] = max(n, range['hi'])
@@ -341,33 +307,6 @@ def mergeAny(ranges0):
     else:
         return mergeAny(ranges1)
 
-# def merges(ranges0, nSmall, nFar):
-#     def noGaps(t):
-#         # print("printing t in merges noGaps", t)
-#         for j in range(1, len(t)+1):
-#             t[j].lo = t[j - 1].hi
-#             t[0].lo = (-1)*(maxsize)
-#             t[len(t)].hi = maxsize
-#         return t
-#     def try2Merge(left, right, j):
-#         y = merged(left['y'], right['y'], nSmall, nFar)
-#         if y:
-#             j = j + 1
-#             left['hi'], left['y'] = right['hi'], y
-#         return j, left
-#     ranges1, j, here = {}, 0, None
-#     # print("printiing ranges0",ranges0)
-#     while j < len(ranges0) - 1:
-#         here = ranges0[j]
-#         if j < len(ranges0) - 1:
-#             j, here = try2Merge(here, ranges0[j+1], j)
-#             j = j + 1
-#             ranges1[len(ranges1)] = here
-#     if len(ranges0) == len(ranges1):
-#         return noGaps(ranges0)
-#     else:
-#         return merges(ranges1, nSmall, nFar)
-
 def merge(col1,col2):
     new_var=copy_t(col1)
     if isinstance(col1, SYM):
@@ -382,15 +321,7 @@ def merge(col1,col2):
     return new_var
 
     
-# def merged(col1, col2, nSmall, nFar):
-#     new_var = merge(col1, col2)
-#     if nSmall and (col1.n < nSmall) or (col2.n < nSmall):
-#         return new_var
-#     if nFar and (not isinstance(col1, SYM)) and abs(col1.mid() - col2.mid()) < nFar:
-#         return new_var
-#     if new_var.div()<=(col1.div()*col1.n \
-#     +col2.div()*col2.n)/new_var.n:
-#         return new_var
+
     
 def merge2(col1,col2,new_var=None): 
     new_var=merge(col1,col2)
@@ -454,30 +385,6 @@ def bins(cols, rowss):
 
     return out
 
-# def bins(cols, rowss):
-#     def fun(x):
-#         return x
-#     def with1Col(col):
-#         n, ranges = withAllRows(col)
-#         ranges = sort_co(map_co(ranges, fun),'lo')
-#         if isinstance(col, SYM):
-#             return ranges
-#         else:
-#             return merges(ranges, n/the['bins'], the['d']*col.div())
-#     def withAllRows(col):
-#         def xy(x, y):
-#             if x != "?":
-#                 k = int(bin(col, x))
-#                 if not k in ranges:
-#                     ranges[k] = RANGE(col.at, col.txt, x)
-#                 extend(ranges[k], x, y)
-#         n, ranges = 0, {}
-#         for y, rows in rowss.items():
-#             for _, row in rows.items():
-#                 xy(row.cells[col.at], y)
-#         return n, ranges
-#     return map_co(cols, with1Col)
-
 def cliffsDelta(ns1,ns2):
     if len(ns1)>256:
         ns1=many(ns1,256)
@@ -519,7 +426,7 @@ def showTree(tree, lvl=None, post=None):
 
     
 
-def slice(t, go=None, stop=None, inc=None):
+def slice(t, go, stop, inc):
     if go and go < 0:
         go = len(t) + go
     if stop and stop < 0:
@@ -548,128 +455,3 @@ def value(has, nB=None, nR=None, sGoal=None):
             r = r + n
     b, r = b/(nB+1/math.inf), r/(nR+1/math.inf)
     return b**(2/(b+r))
-
-def firstN(sortedRanges, scoreFun):
-    def fun(r):
-        # print("r is:",r)
-        print(r["range"]["txt"], r["range"]["lo"], r["range"]["hi"], round_n(r["val"]), r["range"]["y"].has)
-    print("")
-    # print("sortedRanges before map_co is:",sortedRanges)
-    map_co(sortedRanges, fun)
-    # print("sortedRanges is",sortedRanges)
-    first = sortedRanges[0]["val"]
-    def useful(range):
-        if range["val"] > 0.5 and range["val"] > first/10:
-            return range
-    sortedRanges = map_co(sortedRanges, useful)
-    most, out = -1, None
-    for n in range(0, len(sortedRanges)):
-        # print("I'm inside the for loop, testing")
-        score_fun_variable=scoreFun(map_co(slice(sortedRanges, 0, n), on('range')))
-        # print("this is debugging scoreFun,scoreFun is:",score_fun_variable)
-        if score_fun_variable is None:
-            continue
-        tmp, rule = scoreFun(map_co(slice(sortedRanges, 0, n), on('range')))
-        if tmp and tmp > most:
-            out, most = rule, tmp
-    return out, most
-
-def showRule(rule):
-    def pretty(range):
-        return range.lo==range.hi and range.lo or {range.lo, range.hi}
-    def merges(attr, ranges):
-        return map_co(merge(sort_co(ranges, "lo")), pretty), attr
-    def merge(t0):
-        t, j, left, right = {}, 0, 0 , 0
-        empty_dict=dict()
-        while j < len(t0) - 1:
-
-            left= t0[j] if j in t0 else empty_dict
-            right=t0[j+1] if (j+1) in t0 else empty_dict
-
-
-            if right and left["hi"] == right["lo"]:
-                left["hi"] = right["hi"]
-                j = j + 1
-            t[len(t)] = {'lo': left['lo'] if 'lo' in left else 0, 'hi': left['hi'] if 'hi' in left else 0}
-            j = j + 1
-        if len(t0) == len(t):
-            return t
-        else:
-            return merge(t)
-    return kap_co(rule, merges)
-
-def selects(rule, rows):
-    def disjunction(ranges, row):
-        empty_dict=dict()
-        # print(ranges.items())
-        for _, range_stat in ranges.items():
-            current_range=range_stat
-            # print("current range is:",current_range)
-            # print("type of range_stat is:",type(range_stat))
-            # print("this is range_stat, should not be an int, I suppose:", range_stat)
-            # print("this is ranges.items()",ranges.items())
-
-            if range_stat==0:
-                lo=hi=at=0
-            else:
-                lo= range_stat["lo"] if 'lo' in range_stat else empty_dict
-                hi= range_stat["hi"] if 'hi' in range_stat else empty_dict
-                at= range_stat["at"] if 'lo' in range_stat else empty_dict
-
-
-            # print("row is:",row)
-            # print("type of row is:",type(row))
-
-            try:
-                if row['at'] == '?':
-                    x = True
-
-                if 'at' in row:
-                    print("row['at'] is:",row['at'])
-
-                x = row['at'] if 'at' in row else empty_dict
-
-                if x == "?":
-                    return True
-
-                if lo == hi and lo == x:
-                    return True
-
-                if lo <= x and x < hi:
-                    return True
-
-            except:
-                continue
-
-
-
-
-
-            # else:
-            #     if 'at' in row:
-            #         print("row['at'] is:",row['at'])
-
-
-
-
-        return False
-
-    def conjunction(row):
-        for _,ranges in rule.items():
-            if not disjunction(ranges, row):
-                return False
-        return True
-
-    def fun(r):
-        if conjunction(r):
-            return map_co(rows, r)
-    return map_co(rows, fun)
-
-def on(x):
-
-    def fun(t):
-        # print("t is:",t)
-        empty_dict=dict()
-        return t[x] if t else empty_dict
-    return fun
