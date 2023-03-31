@@ -82,14 +82,6 @@ if __name__ == '__main__':
     # eg('bins', 'find deltas between best and rest', bins_test_27, help)
     # eg('xpln', 'explore explanation sets', xpln_test_28, help)
 
-
-
-
-
-
-
-
-
     driver(the, help, egs)
 
 

@@ -192,8 +192,7 @@ class TestEgMethods(unittest.TestCase):
         for i in range(1, 1001): j.append(gaussian(10, 1))
         for i in range(1, 1001): k.append(gaussian(10, 1))
 
-        # for k,v in enumerate(['a','b','c','d','e','f','g','h','j','k']):
-        #     rxs.append(RX(v,"rx"+str(k+1)))
+        
         for k, v in enumerate([a, b, c, d, e, f, g, h, j, k]): rxs.append(RX(v, "rx" + str(k + 1)))
         for _,rx in enumerate(tiles(scottKnot(rxs))):
             print("",rx["rank"],rx["name"],rx["show"])
