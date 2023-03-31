@@ -772,16 +772,16 @@ def tiles(rxs):
 def mid(t):
     # print("initially, t is:",t,"\n\n")
     #t is a collection, not a float
-    sum_var1=sum_var2=0
-    l=0
-    try:
-        if t['has']:
-        # print('t[has] is',t['has'])
-            t=t['has']
-            n=(len(t)-1)//2
-            l=len(t)
-            if l==1:
-                return t[0]
+    # sum_var1=sum_var2=0
+    # l=0
+    # try:
+    #     if t['has']:
+    #     # print('t[has] is',t['has'])
+    #         t=t['has']
+    #         n=(len(t)-1)//2
+    #         l=len(t)
+    #         if l==1:
+    #             return t[0]
             # if (n+1)<l:
             #     sum_var1=t[n]
             #     sum_var2=t[n+1]
