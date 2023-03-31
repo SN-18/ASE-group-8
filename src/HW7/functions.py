@@ -4,9 +4,7 @@ from operator import itemgetter
 import os
 import re
 import math
-from globals import the as the
-from globals import the
-from globals import *
+import globals
 from tables import *
 from sys import maxsize
 import types
@@ -253,20 +251,26 @@ def oo(t):
     print(d)
 
 def add(col,x,n=0):
-    if x!="?":
-        n=n or 1
-        col.n=col.n + n
-        if isinstance(col, SYM):
-            col.has[x]= n + (col.has[x] or 0)
-            if col.has[x]>col.most:
-                col.most,col.mode=col.has[x],x
-        else:
-            col.lo, col.hi=min(x,col.lo),max(x,col.hi)
-            all=len(col.has)
-            pos=(all<the.Max and all+1) or (rand_fltpy()< the["Max"]/col.n and rand_intpy(1,all))
-            if pos:
-                col.has[pos]=x 
-                col.ok=False
+    col['n'] = col['n'] + 1
+    d = x - col['mu']
+    col.mu = col['mu'] + d / col['n']
+    col.m2 = col.m2 + d * (x - col.mu)
+    col.sd = 0 if col.n < 2 else (col.m2 / (col.n - 1)) ** .5
+    end
+    # if x!="?":
+    #     n=n or 1
+    #     col['n']=col['n'] + n
+    #     if isinstance(col, SYM):
+    #         col.has[x]= n + (col.has[x] or 0)
+    #         if col.has[x]>col.most:
+    #             col.most,col.mode=col.has[x],x
+    #     else:
+    #         col['lo'], col['hi']=min(x,col['lo']),max(x,col['hi'])
+    #         all=len(col.has)
+    #         pos=(all<the.Max and all+1) or (rand_fltpy()< the["Max"]/col.n and rand_intpy(1,all))
+    #         if pos:
+    #             col.has[pos]=x
+    #             col.ok=False
     
 def adds(self,col,t):
     for _,x in t.items():
@@ -379,7 +383,7 @@ def merge(col1,col2):
             new_var.add(n)
             # add(new_var,x,n)
     else:
-        for _,n in col2.has.items():
+        for n in col2['has']:
             add(new_var,n)
         new_var.lo=min(col1.lo,col2.lo)
         new_var.hi=max(col1.hi,col2.hi)
@@ -473,8 +477,8 @@ def cliffsDelta(ns1,ns2):
         ns2=many(ns2,10*len(ns1))
 
     n,gt,lt=0,0,0
-    for _,x in ns1.items():
-        for _,y in ns2.items():
+    for x in ns1:
+        for y in ns2:
             n=n+1
             if x>y:
                 gt=gt+1
@@ -756,8 +760,10 @@ def tiles(rxs):
 
 
 def mid(t):
-    t=t['has'] if t['has'] else t
-    n=(len(t)-1)//2
+    # t=t['has'] if t['has'] else t
+    if 'has' in t:
+        t = t['has']
+    n=(len(t))//2
     return (t[n] + t[n+1])/2 if len(t)%2==0 else t[n+1]
 
 def RX(t,s):
@@ -777,7 +783,7 @@ def RX(t,s):
     t = sorted(t)
     return {'name':s or "",'rank':0, 'n':len(t), 'show':"", 'has':t}
 
-def samples(t,n):
+def samples(t,n=0):
     u=dict()
     for i in range(1, (n or len(t) + 1)):
         u[i] =t[random.randint(0,len(t) -1)]

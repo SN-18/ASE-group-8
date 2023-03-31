@@ -1,5 +1,6 @@
 import numpy as np
 import unittest
+import functools
 from functions import *
 
 the, help = {}, '''   
@@ -24,11 +25,8 @@ egs = {}
 class TestEgMethods(unittest.TestCase):
 
     #Test for stats
-    def test_eg_ok(n):
-        if n<=0:
-            n=1
-        n=n or 1
-        random.seed(n)
+    def test_eg_ok(self):
+        self.assertEqual(random.seed(1), random.seed(1))
 
 
     #this is dummy samples, to be deleted,
@@ -76,7 +74,7 @@ class TestEgMethods(unittest.TestCase):
             for i in range(1,101):
                 b.append(gaussian(mu,1))
             cl=cliffsDelta(a,b)
-            bs=bootstrap(a,b, NUM)
+            bs=bootstrap(a,b)
             print("",mu,1,cl,bs,cl and bs)
 
 
@@ -108,8 +106,8 @@ class TestEgMethods(unittest.TestCase):
             for j in range(1,33):
                 t1.append(gaussian(10,1))
                 t2.append(gaussian(d*10,1))
-                print("\t", d, d < 1.1 and True or False, bootstrap(t1, t2), bootstrap(t1, t1))
-                d = round(d + 0.05,2)
+            print("\t", d, d < 1.1, bootstrap(t1, t2), bootstrap(t1, t1))
+            d = round(d + 0.05,2)
 
 
 
@@ -118,44 +116,55 @@ class TestEgMethods(unittest.TestCase):
     def test_eg_five(self):
         for _,rx in enumerate(tiles(scottKnot(
              [RX([0.34,0.49,0.51,0.6,.34,.49,.51,.6],"rx1"),
-             RX({0.6,0.7,0.8,0.9,.6,.7,.8,.9},"rx2"),
-             RX({0.15,0.25,0.4,0.35,0.15,0.25,0.4,0.35},"rx3"),
-             RX({0.6,0.7,0.8,0.9,0.6,0.7,0.8,0.9},"rx4"),
-             RX({0.1,0.2,0.3,0.4,0.1,0.2,0.3,0.4},"rx5")]))):
+             RX([0.6,0.7,0.8,0.9,.6,.7,.8,.9],"rx2"),
+             RX([0.15,0.25,0.4,0.35,0.15,0.25,0.4,0.35],"rx3"),
+             RX([0.6,0.7,0.8,0.9,0.6,0.7,0.8,0.9],"rx4"),
+             RX([0.1,0.2,0.3,0.4,0.1,0.2,0.3,0.4],"rx5")]))):
                 print(rx["name"],rx["rank"],rx["show"])
 
 
     def test_eg_six(self):
         for i,rx in enumerate(tiles(scottKnot(
-                RX({101, 100, 99, 101, 99.5, 101, 100, 99, 101, 99.5}, "rx1"),
+                [RX({101, 100, 99, 101, 99.5, 101, 100, 99, 101, 99.5}, "rx1"),
                 RX({101, 100, 99, 101, 100, 101, 100, 99, 101, 100}, "rx2"),
                 RX({101, 100, 99.5, 101, 99, 101, 100, 99.5, 101, 99}, "rx3"),
-                RX({101, 100, 99, 101, 100, 101, 100, 99, 101, 100}, "rx4")
+                RX({101, 100, 99, 101, 100, 101, 100, 99, 101, 100}, "rx4")]
         ))):
             print(rx["name"],rx["rank"],rx["show"])
 
 
 
 
-    def test_eg_tiles(self,rxs):
-        empty_list=[]
-        rxs= a= b= c= d= e= f= g= h= j= k= empty_list
+    def test_eg_tiles(self):
+        rxs= []
+        a= []
+        b= []
+        c= []
+        d= []
+        e= []
+        f= []
+        g= []
+        h= []
+        j= []
+        k= []
         iter=1
 
         for iter in range(1,1001): a.append(gaussian(10,1))
         for iter in range(1,1001): b.append(gaussian(10.1,1))
-        for iter in range(1, 1001): a.append(gaussian(20, 1))
-        for iter in range(1, 1001): a.append(gaussian(30, 1))
-        for iter in range(1, 1001): a.append(gaussian(30.1, 1))
-        for iter in range(1, 1001): a.append(gaussian(10, 1))
-        for iter in range(1, 1001): a.append(gaussian(10, 1))
-        for iter in range(1, 1001): a.append(gaussian(40, 1))
-        for iter in range(1, 1001): a.append(gaussian(40, 3))
-        for iter in range(1, 1001): a.append(gaussian(10, 1))
+        for iter in range(1, 1001): c.append(gaussian(20, 1))
+        for iter in range(1, 1001): d.append(gaussian(30, 1))
+        for iter in range(1, 1001): e.append(gaussian(30.1, 1))
+        for iter in range(1, 1001): f.append(gaussian(10, 1))
+        for iter in range(1, 1001): g.append(gaussian(10, 1))
+        for iter in range(1, 1001): h.append(gaussian(40, 1))
+        for iter in range(1, 1001): j.append(gaussian(40, 3))
+        for iter in range(1, 1001): k.append(gaussian(10, 1))
 
         for k,v in enumerate([a,b,c,d,e,f,g,h,j,k]): rxs.append(RX(v,"rx" + str(k+1)))
 
-        table.sort(rxs, mid(a) < mid(b))
+        def compare(item1, item2):
+            return mid(a) - mid(b)
+        sorted(rxs, key=functools.cmp_to_key(compare))
         for _,rx in enumerate(tiles(rxs)):print("",rx['name'],rx['show'])
 
 
