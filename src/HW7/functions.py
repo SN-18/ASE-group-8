@@ -382,11 +382,19 @@ def merge(col1,col2):
         for x,n in col2.has.items():
             new_var.add(n)
             # add(new_var,x,n)
-    else:
+    elif isinstance(col1, NUM):
         for n in col2['has']:
             add(new_var,n)
         new_var.lo=min(col1.lo,col2.lo)
         new_var.hi=max(col1.hi,col2.hi)
+    else:
+        new_var = RX([], col1['name'])
+        # for t in (col1['has'] + col2['has']).enumerate():
+        #     for _, x in t.enumerate():
+        #         new_var['has'][1+  len(new_var['has'])] = x
+        new_var['has'] = col1['has'] + col2['has']
+        sorted(new_var['has'])
+        new_var['n'] = len(new_var['has'])
     return new_var
 
     
@@ -663,13 +671,13 @@ def scottKnot(rxs):
 
 
     def same(lo,cut,hi):
-        merges=types.FunctionType(scottKnot.__code__.co_consts[1],{})
+        # merges=types.FunctionType(scottKnot.__code__.co_consts[1],{})
         l=merges(lo,cut)
         r=merges(cut + 1,hi)
-        return cliffsDelta(l['has'],r['has']) and bootstrap(l['has'],r['has'], NUM)
+        return cliffsDelta(l['has'],r['has']) and bootstrap(l['has'],r['has'])
 
     def recurse(lo, hi, rank):
-        merges = types.FunctionType(scottKnot.__code__.co_consts[1], {})
+        # merges = types.FunctionType(scottKnot.__code__.co_consts[1], {})
         b4 = merges(lo, hi)
         best = 0
         cut = None
@@ -679,7 +687,7 @@ def scottKnot(rxs):
                 r = merges(j + 1, hi)
                 now = (l['n'] * (mid(l) - mid(b4)) ** 2 + r['n'] * (mid(r) - mid(b4)) ** 2) / (l['n'] + r['n'])
                 if now > best:
-                    cohen = the.cohen
+                    cohen = the['cohen']
                     if abs(mid(l) - mid(r)) >= cohen:
                         cut, best = j, now
 
@@ -779,32 +787,44 @@ def mid(t):
             #     sum_var2=t[n+1]
 
     # t=t['has'] if t['has'] else t
-    except:
-        sum_var1=0
-        sum_var2=t
+    
+
+    ### RESOLVING MERGE CONFLICT FROM REMOTE to see what works best
+# <<<<<<< HEAD
+#     except:
+#         sum_var1=0
+#         sum_var2=t
 
 
 
-    # print("value of t is:",t,"\n")
-    # print("length of t is:",len(t))
+#     # print("value of t is:",t,"\n")
+#     # print("length of t is:",len(t))
 
-    # n=(len(t)-1)//2
-    # print("the value of n is:",n,"\n")
-    # print("length of t is:",len(t))
-    # if (n + 1) < l:
-    #     sum_var1=t[n]
-    #     sum_var2 = t[n + 1]
-    # else:
-    #     sum_var = 0
+#     # n=(len(t)-1)//2
+#     # print("the value of n is:",n,"\n")
+#     # print("length of t is:",len(t))
+#     # if (n + 1) < l:
+#     #     sum_var1=t[n]
+#     #     sum_var2 = t[n + 1]
+#     # else:
+#     #     sum_var = 0
 
-    if l%2==0:
-        # print("I have escaped mid, by using  if statement")
-        return (sum_var1+sum_var2)/2
-    else:
-        # print("I have escaped mid")
-        return sum_var2
+#     if l%2==0:
+#         # print("I have escaped mid, by using  if statement")
+#         return (sum_var1+sum_var2)/2
+#     else:
+#         # print("I have escaped mid")
+#         return sum_var2
 
     # return (t[n] + t[n+1])/2 if len(t)%2==0 else t[n+1]
+# =======
+    if 'has' in t:
+        t = t['has']
+    n=(len(t))//2
+    if (len(t) == 1):
+        return t[0]
+    return (t[n] + t[n+1])/2 if len(t)%2==0 else t[n+1]
+# >>>>>>> ae03fcf (Running all tests)
 
 def RX(t,s):
     t = sorted(t)

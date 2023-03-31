@@ -170,8 +170,17 @@ class TestEgMethods(unittest.TestCase):
 
 
     def test_eg_sk(self):
-        empty_list=[]
-        rxs= a= b= c= d= e= f= g= h= j= k= empty_list
+        rxs = []
+        a = []
+        b = []
+        c = []
+        d = []
+        e = []
+        f = []
+        g = []
+        h = []
+        j = []
+        k = []
         for i in range(1,1001):a.append(gaussian(10,1))
         for i in range(1, 1001): b.append(gaussian(10.1, 1))
         for i in range(1, 1001): c.append(gaussian(20, 1))
@@ -183,8 +192,9 @@ class TestEgMethods(unittest.TestCase):
         for i in range(1, 1001): j.append(gaussian(10, 1))
         for i in range(1, 1001): k.append(gaussian(10, 1))
 
-        for k,v in enumerate(['a','b','c','d','e','f','g','h','j','k']):
-            rxs[k]=RX(v,"rx"+str(k+1))
+        # for k,v in enumerate(['a','b','c','d','e','f','g','h','j','k']):
+        #     rxs.append(RX(v,"rx"+str(k+1)))
+        for k, v in enumerate([a, b, c, d, e, f, g, h, j, k]): rxs.append(RX(v, "rx" + str(k + 1)))
         for _,rx in enumerate(tiles(scottKnot(rxs))):
             print("",rx["rank"],rx["name"],rx["show"])
 
