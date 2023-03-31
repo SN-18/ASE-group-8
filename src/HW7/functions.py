@@ -759,12 +759,52 @@ def tiles(rxs):
 
 
 
+#
+
 def mid(t):
+    # print("initially, t is:",t,"\n\n")
+    #t is a collection, not a float
+    sum_var1=sum_var2=0
+    l=0
+    try:
+        if t['has']:
+        # print('t[has] is',t['has'])
+            t=t['has']
+            n=(len(t)-1)//2
+            l=len(t)
+            if l==1:
+                return t[0]
+            # if (n+1)<l:
+            #     sum_var1=t[n]
+            #     sum_var2=t[n+1]
+
     # t=t['has'] if t['has'] else t
-    if 'has' in t:
-        t = t['has']
-    n=(len(t))//2
-    return (t[n] + t[n+1])/2 if len(t)%2==0 else t[n+1]
+    except:
+        sum_var1=0
+        sum_var2=t
+
+
+
+    # print("value of t is:",t,"\n")
+    # print("length of t is:",len(t))
+
+    # n=(len(t)-1)//2
+    # print("the value of n is:",n,"\n")
+    # print("length of t is:",len(t))
+    # if (n + 1) < l:
+    #     sum_var1=t[n]
+    #     sum_var2 = t[n + 1]
+    # else:
+    #     sum_var = 0
+
+    if l%2==0:
+        # print("I have escaped mid, by using  if statement")
+        return (sum_var1+sum_var2)/2
+    else:
+        # print("I have escaped mid")
+        return sum_var2
+
+    # return (t[n] + t[n+1])/2 if len(t)%2==0 else t[n+1]
 
 def RX(t,s):
     t = sorted(t)
@@ -798,8 +838,30 @@ def delta(i,other):
 def rxs_sort(rxs):
     for i,x in enumerate(rxs):
         for j,y in enumerate(rxs):
-            if mid(x) < mid(y):
+            if isinstance(mid(x),str) and isinstance(mid(y),str):
+                mid_x_char = ord(x['has'][0]) / 100
+                mid_y_char=  ord(y['has'][0]) / 100
+                if mid_x_char < mid_y_char:
+                    rxs[j], rxs[i] = rxs[i], rxs[j]
+
+            elif isinstance(mid(x), str):
+                # print("x and y are:",x,y)
+                mid_x_char = ord(x['has'][0]) / 100
+                if mid_x_char<mid(y):
+                    rxs[j],rxs[i] = rxs[i],rxs[j]
+            elif isinstance(mid(y), str):
+                mid_y_char = ord(y['has'][0]) / 100
+                if mid(x)<mid_y_char:
+                    rxs[j],rxs[i] = rxs[i],rxs[j]
+
+
+            elif mid(x) < mid(y):
+                # print("mid_x and mid_y should both be floats inside this block")
+                # print("type of mid_x is:",type(mid(x)))
+                # print("type of mid_y is:",type(mid(y)))
                 rxs[j],rxs[i] = rxs[i],rxs[j]
+            # if mid(x) < mid(y):
+            #     rxs[j],rxs[i] = rxs[i],rxs[j]
     return rxs
 
 
