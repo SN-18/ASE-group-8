@@ -38,7 +38,7 @@ Homework repository for **CSC 591 021 Group-3**<br/>
 - HW6:
   1. cd into src/HW6 folder of homework and run ```python main.py -g all -f ../../etc/data/auto93.csv```, Use ```--help``` option for a list of all options and change arguments likewise.
   
-  - HW7:
+- HW7:
   1. cd into src/HW7 folder of homework and run ```python main.py``` after installing numpy using ```python -m pip install numpy``` or similar.
 
 # Team Members
